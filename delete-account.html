@@ -23,13 +23,24 @@
             margin-top: 32px;
             margin-bottom: 8px;
         }
+        h3 {
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
         p { margin: 0 0 12px; }
-        ul {
+        ul, ol {
             margin: 0 0 12px;
             padding-left: 24px;
         }
         li { margin-bottom: 4px; }
         a { color: #1a73e8; }
+        code {
+            background: #f1f1f1;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
         .meta {
             color: #666;
             font-size: 14px;
@@ -42,34 +53,82 @@
             border-radius: 4px;
             margin: 24px 0;
         }
+        .option-box {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin: 16px 0 24px;
+        }
+        .option-box h3 {
+            margin-top: 0;
+        }
+        .tag {
+            display: inline-block;
+            background: #e8f0fe;
+            color: #1a73e8;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body>
 
     <h1>Delete Account – Color Boom</h1>
-    <p class="meta">Developer: Claudiu Tanasa &nbsp;·&nbsp; Last updated: June 8, 2026</p>
+    <p class="meta">Developer: Claudiu Tanasa &nbsp;·&nbsp; Last updated: July 1, 2026</p>
 
     <p>
         Color Boom lets you sign in with your Google account to save your game progress across devices.
-        If you would like to delete your account and all associated data, please follow the steps below.
+        If you would like to delete your account and all associated data, you can do so either directly
+        in the app or by email — see the two options below.
     </p>
 
-    <h2>How to request account deletion</h2>
-    <p>Send an email to <a href="mailto:trirongames@gmail.com">trirongames@gmail.com</a> with the subject line <strong>Account Deletion Request – Color Boom</strong>.</p>
-    <p>Please include the following information in your email:</p>
-    <ul>
-        <li>The Google account email address you used to sign in to Color Boom</li>
-        <li>A brief confirmation that you want your account and data deleted</li>
-    </ul>
+    <h2>Option 1 — Delete directly in the app</h2>
+    <div class="option-box">
+        <h3>Recommended <span class="tag">Fastest</span></h3>
+        <ol>
+            <li>Open Color Boom and tap your profile / avatar icon on the main menu.</li>
+            <li>Tap <strong>Account</strong>.</li>
+            <li>Tap <strong>Delete Account</strong> and confirm.</li>
+        </ol>
+        <p>
+            Your account is immediately scheduled for deletion and is permanently removed after a
+            <strong>7‑day grace period</strong>. You can cancel at any time during those 7 days by returning
+            to the same <strong>Account</strong> screen and tapping <strong>Cancel Deletion</strong> — your
+            account and progress will be kept exactly as they were.
+        </p>
+    </div>
+
+    <h2>Option 2 — Request deletion by email</h2>
+    <div class="option-box">
+        <p>Use this option if you no longer have the app installed, or if you'd rather have us process the request for you.</p>
+        <p>Send an email to <a href="mailto:trirongames@gmail.com">trirongames@gmail.com</a> with the subject line <strong>Account Deletion Request – Color Boom</strong>, and include:</p>
+        <ul>
+            <li>The Google account email address you used to sign in to Color Boom.</li>
+            <li>
+                Your in-app <strong>Account ID (UID)</strong>, if you still have the app installed. You can find it by
+                tapping your profile icon → <strong>Account</strong> — it's the short code shown just below your sign-in method.
+                Accounts are stored and looked up by this ID rather than by email, so including it lets us locate and
+                delete your data much faster.
+            </li>
+            <li>A brief confirmation that you want your account and data deleted.</li>
+        </ul>
+    </div>
 
     <div class="notice">
-        We will process your request within <strong>7 business days</strong> and send a confirmation to your email address once deletion is complete.
+        Email requests are processed within <strong>7 business days</strong>, and we'll send a confirmation to your
+        email address once deletion is complete. In-app requests (Option 1) are processed automatically once the
+        7‑day grace period ends.
     </div>
 
     <h2>What data is deleted</h2>
     <p>Upon account deletion, the following data associated with your account will be permanently removed:</p>
     <ul>
         <li>Your game progress and level data</li>
+        <li>Your display name and score on the weekly leaderboard</li>
         <li>Your Google account identifier stored in our systems</li>
         <li>Any other personal data linked to your account</li>
     </ul>
@@ -85,13 +144,17 @@
     <p>
         You can also independently revoke Color Boom's access to your Google account at any time by visiting
         <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account Permissions</a>
-        and removing Color Boom from the list of connected apps.
+        and removing Color Boom from the list of connected apps. Note that this only revokes access — it does not
+        delete your saved data, so please also use Option 1 or 2 above if you want your data removed.
     </p>
 
-    <h2>Contact</h2>
+    <h2>Questions or complaints</h2>
     <p>
-        For any questions about account deletion or your data, contact us at
-        <a href="mailto:trirongames@gmail.com">trirongames@gmail.com</a>.
+        If you have any questions about account deletion, believe your data wasn't fully removed, or have any other
+        complaint about how your request was handled, contact us first at
+        <a href="mailto:trirongames@gmail.com">trirongames@gmail.com</a> and we'll do our best to resolve it directly.
+        If you're not satisfied with our response, you may also refer to the complaint options listed in our
+        <a href="privacy-policy.html">Privacy Policy</a>.
     </p>
 
 </body>
