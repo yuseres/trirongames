@@ -163,9 +163,9 @@ function Footer() {
             </a>
             <p>The cozy color-by-number game where every tile bursts into art.</p>
             <div className="socials">
-              <a href={window.SOCIALS.instagram} target="_blank" rel="noopener" aria-label="Instagram">📷</a>
-              <a href={window.SOCIALS.tiktok} target="_blank" rel="noopener" aria-label="TikTok">🎵</a>
-              <a href={window.SOCIALS.facebook} target="_blank" rel="noopener" aria-label="Facebook">👍</a>
+              <a href={window.SOCIALS.instagram} target="_blank" rel="noopener" aria-label="Instagram"><IconInstagram /></a>
+              <a href={window.SOCIALS.tiktok} target="_blank" rel="noopener" aria-label="TikTok"><IconTikTok /></a>
+              <a href={window.SOCIALS.facebook} target="_blank" rel="noopener" aria-label="Facebook"><IconFacebook /></a>
             </div>
           </div>
           {cols.map((c, i) =>

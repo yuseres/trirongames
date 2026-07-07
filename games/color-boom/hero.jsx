@@ -22,9 +22,9 @@ function HeroD() {
         <div className="hd-follow">
           <span className="fl">Follow Us</span>
           <div className="socials">
-            <a href={window.SOCIALS.instagram} target="_blank" rel="noopener" aria-label="Instagram">📷</a>
-            <a href={window.SOCIALS.tiktok} target="_blank" rel="noopener" aria-label="TikTok">🎵</a>
-            <a href={window.SOCIALS.facebook} target="_blank" rel="noopener" aria-label="Facebook">👍</a>
+            <a href={window.SOCIALS.instagram} target="_blank" rel="noopener" aria-label="Instagram"><IconInstagram /></a>
+            <a href={window.SOCIALS.tiktok} target="_blank" rel="noopener" aria-label="TikTok"><IconTikTok /></a>
+            <a href={window.SOCIALS.facebook} target="_blank" rel="noopener" aria-label="Facebook"><IconFacebook /></a>
           </div>
         </div>
       </div>
