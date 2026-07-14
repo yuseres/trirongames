@@ -110,7 +110,7 @@ function Gamification() {
             {tiles.map((t, i) =>
             <div className="gtile reveal" key={i} style={{ transitionDelay: `${i * 0.07}s` }}>
                 <div className={"ic " + t.cls}>{t.ic}</div>
-                <h4>{t.h}</h4>
+                <h3>{t.h}</h3>
                 <p>{t.p}</p>
               </div>
             )}
@@ -133,7 +133,7 @@ function CTA() {
             <div>
               <Eyebrow><span style={{ color: "#fff" }}>Free to play</span></Eyebrow>
               <h2 style={{ marginTop: 14 }}>Your next favorite way to unwind.</h2>
-              <p>Download Color Boom free on iOS and Android. Your first masterpiece is one tap away.</p>
+              <p>Download Color Boom free on Google Play. Your first masterpiece is one tap away.</p>
               <div style={{ marginTop: 28 }}><AppBadges /></div>
             </div>
             <div className="cta-phone">
@@ -170,7 +170,7 @@ function Footer() {
           </div>
           {cols.map((c, i) =>
           <div key={i}>
-              <h5>{c.h}</h5>
+              <h4>{c.h}</h4>
               <ul>{c.links.map((l, j) => <li key={j}><a href={l[1]}>{l[0]}</a></li>)}</ul>
             </div>
           )}

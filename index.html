@@ -4,6 +4,16 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>TrironGames — Cozy, colorful games</title>
+<meta name="description" content="TrironGames is a tiny indie studio making cozy, colorful mobile games — starting with Color Boom, a color-by-number game where every tile bursts into art." />
+<meta name="theme-color" content="#F97A2E" />
+<link rel="canonical" href="https://yuseres.github.io/colorboom/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="TrironGames" />
+<meta property="og:title" content="TrironGames — Cozy, colorful games" />
+<meta property="og:description" content="A tiny indie studio making cozy, colorful mobile games — starting with Color Boom." />
+<meta property="og:url" content="https://yuseres.github.io/colorboom/" />
+<meta property="og:image" content="https://yuseres.github.io/colorboom/games/color-boom/assets/logo.png" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" type="image/png" href="assets/TrironGamesLogo2.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +37,7 @@
   .home-hero h1 { font-size: clamp(3.1rem, 7.6vw, 6.6rem); color: #fff; text-shadow: 0 5px 0 rgba(0,0,0,.12); }
   .home-hero .tag {
     margin: 20px auto 0; max-width: 46ch; font-size: clamp(1.05rem, 1.6vw, 1.3rem);
-    color: rgba(255,255,255,.92); font-weight: 600;
+    color: #fff; font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,.15);
   }
   .home-hero .actions { display: flex; gap: 14px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
   .home-hero .btn-primary { background: #fff; color: var(--primary); box-shadow: 0 16px 32px -10px rgba(0,0,0,.28); }
@@ -55,7 +65,7 @@
     display: flex; flex-direction: column; gap: 10px; box-shadow: var(--shadow-md);
   }
   .devlog-card .dl-em { font-size: 30px; }
-  .devlog-card h4 { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; color: var(--ink); }
+  .devlog-card h3 { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; color: var(--ink); }
   .devlog-card p { font-size: .96rem; color: var(--ink-2); font-weight: 600; line-height: 1.55; }
   .devlog-card p a { color: var(--primary); font-weight: 800; }
 
@@ -170,7 +180,7 @@
     <div class="games-grid">
       <div class="game-card">
         <div class="shot">
-          <img src="games/color-boom/assets/screens/library.png" alt="Color Boom art library screenshot" />
+          <img src="games/color-boom/assets/screens/library.png" alt="Color Boom art library screenshot" loading="lazy" decoding="async" />
         </div>
         <div class="info">
           <div class="icon-row">
@@ -200,22 +210,22 @@
     <div class="devlog-row" id="devlogRow">
       <article class="devlog-card">
         <span class="dl-em">🧑‍🎨</span>
-        <h4>One-person team</h4>
+        <h3>One-person team</h3>
         <p>Every screen, palette and sound on this site was made by a single dev — no studio, no investors, just a lot of late nights.</p>
       </article>
       <article class="devlog-card">
         <span class="dl-em">🎨</span>
-        <h4>1,200+ canvases</h4>
+        <h3>1,200+ canvases</h3>
         <p>The library keeps growing every week, with new color-by-number scenes across mandalas, florals and seasonal drops.</p>
       </article>
       <article class="devlog-card">
         <span class="dl-em">🛠️</span>
-        <h4>Always shipping</h4>
+        <h3>Always shipping</h3>
         <p>Bugs get fixed fast and features ship often — this is a game that's actively cooked, not left to simmer.</p>
       </article>
       <article class="devlog-card">
         <span class="dl-em">💌</span>
-        <h4>Say hi</h4>
+        <h3>Say hi</h3>
         <p>Got feedback, found a bug, or just want to say hi? <a href="mailto:trirongames@gmail.com">trirongames@gmail.com</a> always gets read.</p>
       </article>
     </div>
@@ -239,7 +249,7 @@
         the first thing we're proud enough to share. This is only the beginning.
       </p>
       <div class="who-member">
-        <div class="who-av-ring"><img src="assets/claudiu.png" alt="Claudiu Tănasă" /></div>
+        <div class="who-av-ring"><img src="assets/claudiu.png" alt="Claudiu Tănasă" loading="lazy" decoding="async" /></div>
         <b>Claudiu Tănasă</b>
         <small>Dev / Creator</small>
       </div>
@@ -260,7 +270,7 @@
         <p>Cozy, colorful games — starting with Color Boom.</p>
       </div>
       <div>
-        <h5>Game</h5>
+        <h4>Game</h4>
         <ul>
           <li><a href="games/color-boom/index.html">Color Boom</a></li>
           <li><a href="games/color-boom/index.html#features">Features</a></li>
@@ -268,14 +278,14 @@
         </ul>
       </div>
       <div>
-        <h5>Studio</h5>
+        <h4>Studio</h4>
         <ul>
           <li><a href="#studio">About us</a></li>
           <li><a href="mailto:trirongames@gmail.com">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h5>Legal</h5>
+        <h4>Legal</h4>
         <ul>
           <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
           <li><a href="legal/terms.html">Terms</a></li>

@@ -14,9 +14,9 @@ function HeroD() {
       </div>
 
       <div className="spot-stack">
-        <div className="spot-card sc1"><Screen src="profile.png" className="bob" alt="My Profile screen" /></div>
-        <div className="spot-card sc2"><Screen src="library.png" className="bob s2" alt="Art Library screen" /></div>
-        <div className="spot-card sc3"><Screen src="ranks.png" className="bob s3" alt="Weekly Ranks screen" /></div>
+        <div className="spot-card sc1"><Screen src="profile.png" className="bob" alt="My Profile screen" eager /></div>
+        <div className="spot-card sc2"><Screen src="library.png" className="bob s2" alt="Art Library screen" eager /></div>
+        <div className="spot-card sc3"><Screen src="ranks.png" className="bob s3" alt="Weekly Ranks screen" eager /></div>
         <div className="hd-puck bob s2" style={{ top: "2%", left: "0%" }}>
           <span className="pi">🔥</span>
           <span><small>Streak</small><b>Day 2</b></span>

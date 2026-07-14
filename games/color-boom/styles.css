@@ -363,7 +363,7 @@ body.no-confetti .dot, body.no-confetti .sq { display: none; }
 }
 .gtile:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
 .gtile .ic { width: 52px; height: 52px; border-radius: 15px; display: grid; place-items: center; font-size: 27px; margin-bottom: 6px; }
-.gtile h4 { font-size: 1.35rem; }
+.gtile h3 { font-size: 1.35rem; }
 .gtile p { font-size: .95rem; color: var(--ink-2); font-weight: 600; }
 .ic-gold { background: color-mix(in srgb, var(--gold) 22%, var(--card)); }
 .ic-blue { background: color-mix(in srgb, var(--blue) 22%, var(--card)); }
@@ -434,7 +434,7 @@ body.no-confetti .dot, body.no-confetti .sq { display: none; }
 .footer { padding: 70px 0 40px; }
 .footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 30px; }
 .footer-brand p { color: var(--ink-2); font-size: .98rem; max-width: 30ch; margin-top: 16px; }
-.footer h5 { font-family: "Baloo 2", sans-serif; font-size: 14px; letter-spacing: .04em; margin-bottom: 14px; }
+.footer h4 { font-family: "Baloo 2", sans-serif; font-size: 14px; letter-spacing: .04em; margin-bottom: 14px; }
 .footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
 .footer ul a { color: var(--ink-2); font-weight: 700; font-size: 14.5px; transition: .2s; }
 .footer ul a:hover { color: var(--primary); }

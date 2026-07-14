@@ -1,0 +1,12 @@
+{
+  "name": "trirongames-site",
+  "private": true,
+  "scripts": {
+    "build": "babel games/color-boom/components.jsx games/color-boom/hero.jsx games/color-boom/sections.jsx games/color-boom/app.jsx --presets @babel/preset-react --out-file games/color-boom/app.bundle.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-react": "^7.27.0"
+  }
+}

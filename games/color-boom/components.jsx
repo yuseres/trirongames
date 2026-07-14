@@ -10,10 +10,10 @@ const SOCIALS = {
 };
 
 // A floating app-screen card (cropped real screen)
-function Screen({ src, className = "", style, alt = "" }) {
+function Screen({ src, className = "", style, alt = "", eager = false }) {
   return (
     <div className={"screen " + className} style={style}>
-      <img src={S + src} alt={alt} />
+      <img src={S + src} alt={alt} loading={eager ? "eager" : "lazy"} decoding="async" />
     </div>
   );
 }
