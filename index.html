@@ -89,6 +89,13 @@
   .game-card .learn { font-family: var(--font-display); font-weight: 700; font-size: 15.5px; display: inline-flex; align-items: center; gap: 8px; }
   .game-card .learn:hover .arrow { transform: translateX(3px); }
   .game-card .arrow { transition: transform .2s; }
+  .game-card.soon .shot img { opacity: .92; }
+  .coming-soon {
+    display: inline-flex; align-items: center; font-family: var(--font-display); font-weight: 800;
+    font-size: 12.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--primary);
+    background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 5px 14px;
+    box-shadow: var(--shadow-sm);
+  }
   @media (max-width: 800px) { .game-card { grid-template-columns: 1fr; } }
 
   /* Who we are (studio) */
@@ -175,7 +182,7 @@
   <div class="wrap">
     <div style="max-width:620px; margin-bottom: 40px;">
       <span class="eyebrow">Our games</span>
-      <h2 style="font-size:clamp(1.9rem,3.6vw,2.8rem); margin-top:14px;">One game so far. More on the way.</h2>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.8rem); margin-top:14px;">One game live. One more on the way.</h2>
     </div>
     <div class="games-grid">
       <div class="game-card">
@@ -189,6 +196,19 @@
           </div>
           <p class="blurb">The cozy color-by-number game where every tile you fill bursts into art. Paint, collect rewards, and climb the weekly ranks.</p>
           <a class="learn" href="games/color-boom/index.html">Learn more <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="game-card soon">
+        <div class="shot">
+          <img src="games/animals-merge/assets/banner.jpg" alt="Animals Merge promo art" loading="lazy" decoding="async" />
+        </div>
+        <div class="info">
+          <div class="icon-row">
+            <div class="mini-mark"><img src="games/animals-merge/assets/icon.png" alt="" /></div>
+            <h3>Animals Merge</h3>
+          </div>
+          <p class="blurb">Merge cute critters into bigger, rarer ones in this cozy merge puzzler. Still cooking — more details soon.</p>
+          <span class="coming-soon">Coming soon</span>
         </div>
       </div>
     </div>
