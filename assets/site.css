@@ -1,26 +1,35 @@
 /* assets/site.css — shared design tokens & chrome for TrironGames site
-   (homepage + legal pages). Fonts: Baloo 2 (display) + Nunito (body).
-   Accent: warm orange, matching the Color Boom brand. */
+   (studio home + game pages + legal pages). Fonts: Baloo 2 (display) + Nunito.
+
+   The studio shell is a soft pastel-neutral cream so that each game's own
+   accent leads. Studio chrome (nav, buttons, eyebrows) uses a muted clay
+   `--primary`; individual game cards/sections override `--game-accent` to
+   paint themselves in their own colour. */
 
 :root {
-  --bg:        #FBF2EC;
-  --bg-2:      #F5DBD9;
+  --bg:        #F6EFE7;
+  --bg-2:      #EFE4D8;
   --card:      #FFFFFF;
-  --card-2:    #FCF0EA;
-  --ink:       #3A2C28;
-  --ink-2:     #8C7772;
-  --ink-3:     #B9A6A0;
+  --card-2:    #F5ECE2;
+  --ink:       #3A2F28;
+  --ink-2:     #857567;
+  --ink-3:     #B4A597;
   --line:      rgba(58,44,40,.10);
   --line-2:    rgba(58,44,40,.16);
 
-  --primary:   #F97A2E;
-  --primary-2: #FC9442;
+  /* Studio accent — muted clay, de-branded from Color Boom's pure orange */
+  --primary:   #B25C43;
+  --primary-2: #CE7A5C;
   --primary-ink: #FFFFFF;
 
-  --shadow-sm: 0 4px 16px rgba(150,80,70,.10);
-  --shadow-md: 0 20px 44px -16px rgba(150,80,70,.26);
-  --shadow-lg: 0 48px 90px -28px rgba(130,62,52,.36);
-  --shadow-pop: 0 16px 32px -10px rgba(249,122,46,.42);
+  /* Per-game accent: defaults to the studio clay, overridden inline with
+     style="--game-accent:#…" on a game card or section. */
+  --game-accent: var(--primary);
+
+  --shadow-sm: 0 4px 16px rgba(120,90,70,.10);
+  --shadow-md: 0 20px 44px -16px rgba(120,90,70,.24);
+  --shadow-lg: 0 48px 90px -28px rgba(105,78,60,.34);
+  --shadow-pop: 0 16px 32px -10px rgba(178,92,67,.34);
 
   --r-sm: 14px;
   --r-md: 22px;

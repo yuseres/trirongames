@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>TrironGames — Cozy, colorful games</title>
-<meta name="description" content="TrironGames is a tiny indie studio making cozy, colorful mobile games — starting with Color Boom, a color-by-number game where every tile bursts into art." />
-<meta name="theme-color" content="#F97A2E" />
+<title>TrironGames — A tiny indie game studio</title>
+<meta name="description" content="TrironGames is a tiny three-person indie studio making cozy, colorful games. Color Boom is live, with more on the way." />
+<meta name="theme-color" content="#B25C43" />
 <link rel="canonical" href="https://yuseres.github.io/trirongames/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="TrironGames" />
-<meta property="og:title" content="TrironGames — Cozy, colorful games" />
-<meta property="og:description" content="A tiny indie studio making cozy, colorful mobile games — starting with Color Boom." />
+<meta property="og:title" content="TrironGames — A tiny indie game studio" />
+<meta property="og:description" content="A tiny three-person indie studio making cozy, colorful games. Color Boom is live, with more on the way." />
 <meta property="og:url" content="https://yuseres.github.io/trirongames/" />
 <meta property="og:image" content="https://yuseres.github.io/trirongames/games/color-boom/assets/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -23,127 +23,177 @@
   /* Home-page-only styles */
   .home-hero {
     padding: clamp(80px, 11vw, 130px) 0 clamp(60px, 8vw, 100px); text-align: center;
-    background: linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 55%, #F2A93B 100%);
+    background: linear-gradient(165deg, var(--card-2) 0%, var(--bg-2) 60%, #E9D9CA 100%);
     border-radius: 0 0 var(--r-xl) var(--r-xl);
-    color: #fff;
+    color: var(--ink); position: relative; overflow: hidden;
   }
+  .home-hero::before, .home-hero::after {
+    content: ""; position: absolute; border-radius: 50%; pointer-events: none; opacity: .5;
+  }
+  .home-hero::before { width: 300px; height: 300px; top: -90px; left: -80px; background: radial-gradient(circle, #F0A97E, transparent 70%); }
+  .home-hero::after  { width: 340px; height: 340px; bottom: -120px; right: -90px; background: radial-gradient(circle, #A9C7B4, transparent 70%); }
+  .home-hero > * { position: relative; z-index: 1; }
   .home-hero .mark-big {
     width: 96px; height: 96px; border-radius: 26px; margin: 0 auto 26px;
     overflow: hidden;
     display: grid; place-items: center; font-size: 50px; color: #fff;
-    box-shadow: 0 16px 32px -10px rgba(0,0,0,.28); transform: rotate(-5deg);
+    box-shadow: var(--shadow-lg); transform: rotate(-5deg); background: var(--card);
   }
   .home-hero .mark-big img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .home-hero h1 { font-size: clamp(3.1rem, 7.6vw, 6.6rem); color: #fff; text-shadow: 0 5px 0 rgba(0,0,0,.12); }
+  .home-hero h1 { font-size: clamp(3.1rem, 7.6vw, 6.6rem); color: var(--ink); }
   .home-hero .tag {
-    margin: 20px auto 0; max-width: 46ch; font-size: clamp(1.05rem, 1.6vw, 1.3rem);
-    color: #fff; font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,.15);
+    margin: 20px auto 0; max-width: 48ch; font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    color: var(--ink-2); font-weight: 700;
   }
   .home-hero .actions { display: flex; gap: 14px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
-  .home-hero .btn-primary { background: #fff; color: var(--primary); box-shadow: 0 16px 32px -10px rgba(0,0,0,.28); }
-  .home-hero .btn-primary:hover { color: var(--primary-2); }
-  .home-hero .btn-ghost { background: rgba(255,255,255,.16); color: #fff; border-color: rgba(255,255,255,.4); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
-  .home-hero .btn-ghost:hover { background: rgba(255,255,255,.24); color: #fff; }
 
-  /* Dev log — dark contrasting band, horizontal scroll-snap cards */
-  .devlog-band { background: var(--ink); padding: clamp(56px, 8vw, 100px) 0; margin-top: clamp(56px, 8vw, 100px); }
-  .devlog-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
-  .devlog-nav { display: flex; gap: 10px; }
-  .devlog-arrow {
-    width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25);
-    background: rgba(255,255,255,.08); color: #fff; font-size: 20px; cursor: pointer; transition: .2s;
+  /* ---------- Status pills (shared across grid + roadmap) ---------- */
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-display);
+    font-weight: 800; font-size: 12px; letter-spacing: .04em; text-transform: uppercase;
+    padding: 5px 13px; border-radius: 999px; align-self: flex-start;
+    color: var(--game-accent);
+    background: color-mix(in srgb, var(--game-accent) 12%, var(--card));
+    border: 1px solid color-mix(in srgb, var(--game-accent) 30%, transparent);
   }
-  .devlog-arrow:hover { background: rgba(255,255,255,.18); }
-  .devlog-row {
-    display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
-    padding-bottom: 6px; scrollbar-width: none;
-  }
-  .devlog-row::-webkit-scrollbar { display: none; }
-  .devlog-card {
-    scroll-snap-align: start; flex: 0 0 min(300px, 84vw);
-    background: var(--card); border-radius: var(--r-lg); padding: 26px 24px;
-    display: flex; flex-direction: column; gap: 10px; box-shadow: var(--shadow-md);
-  }
-  .devlog-card .dl-em { font-size: 30px; }
-  .devlog-card h3 { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; color: var(--ink); }
-  .devlog-card p { font-size: .96rem; color: var(--ink-2); font-weight: 600; line-height: 1.55; }
-  .devlog-card p a { color: var(--primary); font-weight: 800; }
+  .status-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--game-accent); }
+  .status-pill.is-live::before { box-shadow: 0 0 0 0 color-mix(in srgb, var(--game-accent) 60%, transparent); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--game-accent) 55%,transparent);} 70%{box-shadow:0 0 0 7px transparent;} 100%{box-shadow:0 0 0 0 transparent;} }
 
+  /* ---------- Games grid ---------- */
   .games-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
   .game-card {
     display: grid; grid-template-columns: 1fr 1.15fr; align-items: stretch;
     border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--shadow-lg);
-    background: var(--bg-2);
+    background: var(--card);
   }
-  .game-card .shot { position: relative; background: var(--card-2); display: grid; place-items: center; padding: 30px; }
+  .game-card .shot { position: relative; background: color-mix(in srgb, var(--game-accent) 10%, var(--card-2)); display: grid; place-items: center; padding: 30px; }
   .game-card .shot img { border-radius: 26px; box-shadow: var(--shadow-md); border: 4px solid #fff; max-height: 380px; }
   .game-card .info { padding: clamp(30px, 4vw, 52px); display: flex; flex-direction: column; gap: 16px; justify-content: center; align-items: flex-start; }
   .game-card .icon-row { display: flex; align-items: center; gap: 12px; }
   .game-card .icon-row .mini-mark {
     width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; font-size: 24px; color: #fff;
-    overflow: hidden; box-shadow: var(--shadow-pop);
+    overflow: hidden; box-shadow: var(--shadow-pop); background: var(--game-accent);
   }
   .game-card .icon-row .mini-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .game-card h3 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); }
   .game-card p.blurb { color: var(--ink-2); font-size: 1.05rem; max-width: 40ch; }
-  .game-card .learn { font-family: var(--font-display); font-weight: 700; font-size: 15.5px; display: inline-flex; align-items: center; gap: 8px; }
+  .game-card .learn { font-family: var(--font-display); font-weight: 700; font-size: 15.5px; color: var(--game-accent); display: inline-flex; align-items: center; gap: 8px; }
   .game-card .learn:hover .arrow { transform: translateX(3px); }
   .game-card .arrow { transition: transform .2s; }
-  .game-card.soon .shot img { opacity: .92; }
-  .coming-soon {
-    display: inline-flex; align-items: center; font-family: var(--font-display); font-weight: 800;
-    font-size: 12.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--primary);
-    background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 5px 14px;
-    box-shadow: var(--shadow-sm);
-  }
   @media (max-width: 800px) { .game-card { grid-template-columns: 1fr; } }
 
-  /* Who we are (studio) */
-  .who { display: flex; flex-direction: column; align-items: center; text-align: center; }
-  .who-panel {
-    position: relative; width: 100%; overflow: hidden;
-    background: var(--card); border-radius: var(--r-xl); box-shadow: var(--shadow-lg);
-    padding: clamp(48px, 7vw, 80px) clamp(24px, 6vw, 60px);
+  /* Coming-soon codename cards */
+  .codename-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+  .codename-card {
+    display: grid; grid-template-columns: 128px 1fr; align-items: stretch;
+    border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-md);
+    background: var(--card); border: 1px solid var(--line);
   }
-  .who-panel::before {
-    content: ""; position: absolute; top: -120px; right: -120px; width: 320px; height: 320px;
-    border-radius: 50%; background: radial-gradient(circle, var(--primary-2), transparent 70%);
-    opacity: .18; pointer-events: none;
+  .codename-card .cc-art {
+    display: grid; place-items: center; position: relative; overflow: hidden;
+    background:
+      radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--game-accent) 45%, transparent), transparent 60%),
+      radial-gradient(circle at 75% 80%, color-mix(in srgb, var(--game-accent) 30%, transparent), transparent 55%),
+      color-mix(in srgb, var(--game-accent) 14%, var(--card-2));
   }
-  .who-pill {
-    position: relative; display: inline-flex; align-items: center; justify-content: center;
-    padding: 16px 46px; border-radius: 999px; margin-bottom: clamp(28px, 4vw, 44px);
-    background: linear-gradient(150deg, var(--primary-2), var(--primary));
-    box-shadow: var(--shadow-pop);
-    font-family: var(--font-display); font-weight: 800; color: #fff;
-    font-size: clamp(1.6rem, 3.2vw, 2.4rem); letter-spacing: -.01em; z-index: 1; white-space: nowrap;
+  .codename-card .cc-art .cc-mark {
+    width: 62px; height: 62px; border-radius: 18px; display: grid; place-items: center;
+    background: var(--card); box-shadow: var(--shadow-sm); overflow: hidden;
+    font-family: var(--font-display); font-weight: 800; font-size: 26px; color: var(--game-accent);
   }
-  .who-pill .puff { position: absolute; background: #fff; border-radius: 50%; box-shadow: var(--shadow-sm); z-index: -1; }
-  .who-pill .p1 { width: 44px; height: 44px; left: -16px; top: 8px; }
-  .who-pill .p2 { width: 32px; height: 32px; left: 8px; bottom: -10px; }
-  .who-pill .p3 { width: 48px; height: 48px; right: -18px; bottom: 2px; }
-  .who-pill .p4 { width: 28px; height: 28px; right: 16px; top: -10px; }
-  .who-story {
-    max-width: 60ch; margin: 0 auto clamp(40px, 5vw, 60px); position: relative; z-index: 1;
-    font-size: clamp(1.05rem, 1.6vw, 1.28rem); line-height: 1.7; font-weight: 600; color: var(--ink);
-    text-wrap: pretty;
+  .codename-card .cc-art .cc-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .codename-card .cc-body { padding: 26px 26px 24px; display: flex; flex-direction: column; gap: 10px; }
+  .codename-card h3 { font-size: 1.4rem; }
+  .codename-card .cc-genre { font-family: var(--font-display); font-weight: 700; font-size: .9rem; color: var(--game-accent); }
+  .codename-card .blurb { color: var(--ink-2); font-size: .98rem; font-weight: 600; line-height: 1.55; }
+  .codename-card .cc-notify { font-family: var(--font-display); font-weight: 800; font-size: 14px; color: var(--game-accent); display: inline-flex; align-items: center; gap: 6px; margin-top: 2px; }
+  .codename-card .cc-notify:hover { color: var(--game-accent); }
+  @media (max-width: 720px) { .codename-grid { grid-template-columns: 1fr; } .codename-card { grid-template-columns: 92px 1fr; } }
+
+  /* ---------- Studio roadmap ---------- */
+  .roadmap-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 30px; flex-wrap: wrap; }
+  .roadmap-nav { display: flex; gap: 10px; }
+  .rm-arrow {
+    width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line-2);
+    background: var(--card); color: var(--ink); font-size: 20px; cursor: pointer; transition: .2s; box-shadow: var(--shadow-sm);
   }
+  .rm-arrow:hover { transform: translateY(-2px); color: var(--primary); }
+  .roadmap-row { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; scrollbar-width: none; }
+  .roadmap-row::-webkit-scrollbar { display: none; }
+  .stage {
+    scroll-snap-align: start; flex: 0 0 min(340px, 86vw);
+    background: var(--card); border-radius: var(--r-lg); border: 1px solid var(--line);
+    box-shadow: var(--shadow-md); padding: 26px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .stage-label { font-family: var(--font-display); font-weight: 800; font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); display: flex; align-items: center; gap: 9px; margin-bottom: 8px; }
+  .stage-label .dot { width: 9px; height: 9px; border-radius: 50%; background: currentColor; }
+  .stage-game { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); }
+  .stage-game:first-of-type { border-top: none; }
+  .stage-game .sg-dot { width: 12px; height: 12px; border-radius: 50%; margin-top: 5px; flex: 0 0 auto; background: var(--game-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--game-accent) 18%, transparent); }
+  .stage-game b { font-family: var(--font-display); font-weight: 800; font-size: 1.08rem; color: var(--ink); }
+  .stage-game span { display: block; font-size: .9rem; font-weight: 600; color: var(--ink-2); margin-top: 2px; }
+  .stage-empty { color: var(--ink-3); font-weight: 700; font-size: .95rem; padding: 12px 0; }
+
+  /* ---------- Dev log — dark contrasting band ---------- */
+  .devlog-band { background: var(--ink); padding: clamp(56px, 8vw, 100px) 0; margin-top: clamp(56px, 8vw, 100px); }
+  .devlog-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
+  .devlog-nav { display: flex; gap: 10px; }
+  .devlog-arrow { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.08); color: #fff; font-size: 20px; cursor: pointer; transition: .2s; }
+  .devlog-arrow:hover { background: rgba(255,255,255,.18); }
+  .devlog-row { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; scrollbar-width: none; }
+  .devlog-row::-webkit-scrollbar { display: none; }
+  .devlog-card { scroll-snap-align: start; flex: 0 0 min(300px, 84vw); background: var(--card); border-radius: var(--r-lg); padding: 26px 24px; display: flex; flex-direction: column; gap: 10px; box-shadow: var(--shadow-md); }
+  .devlog-card .dl-em { font-size: 30px; }
+  .devlog-card h3 { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; color: var(--ink); }
+  .devlog-card p { font-size: .96rem; color: var(--ink-2); font-weight: 600; line-height: 1.55; }
+  .devlog-card p a { color: var(--primary); font-weight: 800; }
+
+  /* ---------- Notify-me hook ---------- */
+  .notify-panel {
+    background: linear-gradient(150deg, var(--card) 0%, var(--card-2) 100%);
+    border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--shadow-lg);
+    padding: clamp(36px, 5vw, 60px); text-align: center; max-width: 720px; margin: 0 auto;
+  }
+  .notify-panel h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
+  .notify-panel p.sub { color: var(--ink-2); font-weight: 700; margin: 12px auto 0; max-width: 44ch; }
+  .notify-form { display: flex; gap: 12px; justify-content: center; margin-top: 26px; flex-wrap: wrap; }
+  .notify-form input {
+    font-family: var(--font-body); font-weight: 700; font-size: 16px; color: var(--ink);
+    padding: 14px 20px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--card);
+    min-width: min(320px, 78vw); outline: none; transition: border-color .2s, box-shadow .2s;
+  }
+  .notify-form input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 18%, transparent); }
+  .notify-done { display: none; margin-top: 22px; font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; color: var(--primary); }
+  .notify-note { margin-top: 16px; font-size: 12.5px; font-weight: 700; color: var(--ink-3); }
+
+  /* ---------- Team roster ---------- */
+  .roster { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+  .member {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg);
+    box-shadow: var(--shadow-md); padding: 34px 26px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px;
+  }
+  .member .av-ring { padding: 5px; border-radius: 50%; background: linear-gradient(150deg, color-mix(in srgb, var(--game-accent) 65%, #fff), var(--game-accent)); box-shadow: 0 12px 26px -10px color-mix(in srgb, var(--game-accent) 60%, transparent); margin-bottom: 8px; }
+  .member .av { width: 128px; height: 128px; border-radius: 50%; object-fit: cover; background: var(--card-2); border: 4px solid #fff; display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; font-size: 44px; color: var(--game-accent); }
+  .member .av img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+  .member b { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; color: var(--ink); }
+  .member .role { font-weight: 800; font-size: .95rem; color: var(--game-accent); }
+  .member .bio { font-size: .96rem; font-weight: 600; color: var(--ink-2); line-height: 1.55; max-width: 30ch; }
+  .member .building { margin-top: 6px; font-family: var(--font-display); font-weight: 800; font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-2); background: var(--card-2); border: 1px solid var(--line); border-radius: 999px; padding: 5px 13px; }
+  .member .building span { color: var(--game-accent); }
+  @media (max-width: 820px) { .roster { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; } }
+
+  /* Studio intro panel */
+  .who-panel { position: relative; overflow: hidden; background: var(--card); border-radius: var(--r-xl); box-shadow: var(--shadow-lg); padding: clamp(48px, 7vw, 80px) clamp(24px, 6vw, 60px); text-align: center; }
+  .who-panel::before { content: ""; position: absolute; top: -120px; right: -120px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, var(--primary-2), transparent 70%); opacity: .16; pointer-events: none; }
+  .who-pill { position: relative; display: inline-flex; align-items: center; justify-content: center; padding: 16px 46px; border-radius: 999px; margin-bottom: clamp(24px, 4vw, 40px); background: linear-gradient(150deg, var(--primary-2), var(--primary)); box-shadow: var(--shadow-pop); font-family: var(--font-display); font-weight: 800; color: #fff; font-size: clamp(1.6rem, 3.2vw, 2.4rem); letter-spacing: -.01em; z-index: 1; white-space: nowrap; }
+  .who-story { max-width: 62ch; margin: 0 auto; position: relative; z-index: 1; font-size: clamp(1.05rem, 1.6vw, 1.28rem); line-height: 1.7; font-weight: 700; color: var(--ink); text-wrap: pretty; }
   .who-story .hl { color: var(--primary); font-weight: 800; }
-  .who-member { display: flex; flex-direction: column; align-items: center; gap: 14px; position: relative; z-index: 1; }
-  .who-av-ring {
-    padding: 6px; border-radius: 50%; background: linear-gradient(150deg, var(--primary-2), var(--primary));
-    box-shadow: var(--shadow-pop);
-  }
-  .who-av-ring img { display: block; width: 160px; height: 160px; border-radius: 50%; object-fit: cover; background: var(--card-2); border: 4px solid #fff; }
-  .who-member b { font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: var(--ink); }
-  .who-member small { font-weight: 800; font-size: .98rem; color: var(--primary); }
-  .who-foot { margin-top: clamp(30px, 4vw, 46px); font-weight: 700; color: var(--ink-2); font-size: 1rem; position: relative; z-index: 1; }
-  .who-foot b { color: var(--ink); font-weight: 800; }
 </style>
 <template id="__bundler_thumbnail">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-<rect width="100" height="100" fill="#FBF2EC"/>
-<rect x="30" y="30" width="40" height="40" rx="12" fill="#F97A2E"/>
+<rect width="100" height="100" fill="#F6EFE7"/>
+<rect x="30" y="30" width="40" height="40" rx="12" fill="#B25C43"/>
 <circle cx="50" cy="50" r="9" fill="#fff"/>
 </svg>
 </template>
@@ -159,6 +209,7 @@
       </a>
       <div class="site-nav-links">
         <a href="#games">Games</a>
+        <a href="#roadmap">Roadmap</a>
         <a href="#studio">Studio</a>
         <a href="legal/index.html">Legal</a>
         <a href="mailto:trirongames@gmail.com">Contact</a>
@@ -171,10 +222,10 @@
 <header class="home-hero wrap" id="top">
   <div class="mark-big"><img src="assets/trirongames-icon.png" alt="" /></div>
   <h1>TrironGames</h1>
-  <p class="tag">Cozy, colorful games made by a very small team — starting with Color Boom.</p>
+  <p class="tag">A tiny three-person studio making cozy, colorful games. Color Boom is live — and we're just getting started.</p>
   <div class="actions">
-    <a class="btn btn-primary" href="games/color-boom/index.html">Explore Color Boom</a>
-    <a class="btn btn-ghost" href="#studio">Who we are</a>
+    <a class="btn btn-primary" href="#games">See our games</a>
+    <a class="btn btn-ghost" href="#studio">Meet the crew</a>
   </div>
 </header>
 
@@ -182,35 +233,53 @@
   <div class="wrap">
     <div style="max-width:620px; margin-bottom: 40px;">
       <span class="eyebrow">Our games</span>
-      <h2 style="font-size:clamp(1.9rem,3.6vw,2.8rem); margin-top:14px;">One game live. One more on the way.</h2>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.8rem); margin-top:14px;">One game live. More in the oven.</h2>
     </div>
-    <div class="games-grid">
-      <div class="game-card">
-        <div class="shot">
-          <img src="games/color-boom/assets/screens/library.png" alt="Color Boom art library screenshot" loading="lazy" decoding="async" />
-        </div>
-        <div class="info">
-          <div class="icon-row">
-            <div class="mini-mark"><img src="games/color-boom/assets/logo.png" alt="" /></div>
-            <h3>Color Boom</h3>
-          </div>
-          <p class="blurb">The cozy color-by-number game where every tile you fill bursts into art. Paint, collect rewards, and climb the weekly ranks.</p>
-          <a class="learn" href="games/color-boom/index.html">Learn more <span class="arrow">→</span></a>
-        </div>
+
+    <div class="games-grid" id="gamesGrid" aria-live="polite"></div>
+    <div class="codename-grid" id="codenameGrid"></div>
+
+    <noscript>
+      <ul style="margin-top:24px; line-height:2; font-weight:700;">
+        <li><a href="games/color-boom/index.html">Color Boom</a> — live now, a cozy color-by-number game.</li>
+        <li>Animals Merge — a cozy merge puzzler, in development.</li>
+        <li>Codename Vector — a new vector-styled title, planned.</li>
+      </ul>
+    </noscript>
+  </div>
+</section>
+
+<section class="section" id="roadmap" style="padding-top:0;">
+  <div class="wrap">
+    <div class="roadmap-head">
+      <div>
+        <span class="eyebrow">Studio roadmap</span>
+        <h2 style="font-size:clamp(1.9rem,3.6vw,2.6rem); margin-top:14px;">Where everything stands.</h2>
       </div>
-      <div class="game-card soon">
-        <div class="shot">
-          <img src="games/animals-merge/assets/banner.jpg" alt="Animals Merge promo art" loading="lazy" decoding="async" />
-        </div>
-        <div class="info">
-          <div class="icon-row">
-            <div class="mini-mark"><img src="games/animals-merge/assets/icon.png" alt="" /></div>
-            <h3>Animals Merge</h3>
-          </div>
-          <p class="blurb">Merge cute critters into bigger, rarer ones in this cozy merge puzzler. Still cooking — more details soon.</p>
-          <span class="coming-soon">Coming soon</span>
-        </div>
+      <div class="roadmap-nav">
+        <button class="rm-arrow" id="rmPrev" aria-label="Previous">‹</button>
+        <button class="rm-arrow" id="rmNext" aria-label="Next">›</button>
       </div>
+    </div>
+    <div class="roadmap-row" id="roadmapRow"></div>
+  </div>
+</section>
+
+<section class="section" id="notify" style="padding-top:0;">
+  <div class="wrap">
+    <div class="notify-panel">
+      <span class="eyebrow" style="justify-content:center;">Get notified</span>
+      <h2 style="margin-top:14px;">Be first to play what's next.</h2>
+      <p class="sub">Drop your email and we'll ping you the moment Animals Merge — and whatever comes after — is ready to play.</p>
+      <!-- Placeholder only: this form is inert and no data leaves the page yet.
+           To go live, add action="https://formspree.io/f/XXXX" method="POST"
+           and remove the preventDefault handler in the script below. -->
+      <form class="notify-form" id="notifyForm" novalidate>
+        <input type="email" id="notifyEmail" name="email" placeholder="you@example.com" aria-label="Email address" required />
+        <button class="btn btn-primary" type="submit">Notify me</button>
+      </form>
+      <p class="notify-done" id="notifyDone">Thanks — you're on the list. We'll be in touch. 🎉</p>
+      <p class="notify-note">No spam, ever. We'll only email about new game launches.</p>
     </div>
   </div>
 </section>
@@ -229,19 +298,19 @@
     </div>
     <div class="devlog-row" id="devlogRow">
       <article class="devlog-card">
-        <span class="dl-em">🧑‍🎨</span>
-        <h3>One-person team</h3>
-        <p>Every screen, palette and sound on this site was made by a single dev — no studio, no investors, just a lot of late nights.</p>
+        <span class="dl-em">🧑‍🤝‍🧑</span>
+        <h3>Three-person crew</h3>
+        <p>Every screen, palette and sound is made by three friends juggling day jobs and late nights — no publisher, no investors.</p>
       </article>
       <article class="devlog-card">
         <span class="dl-em">🎨</span>
         <h3>1,200+ canvases</h3>
-        <p>The library keeps growing every week, with new color-by-number scenes across mandalas, florals and seasonal drops.</p>
+        <p>Color Boom's library keeps growing every week, with new color-by-number scenes across mandalas, florals and seasonal drops.</p>
       </article>
       <article class="devlog-card">
         <span class="dl-em">🛠️</span>
         <h3>Always shipping</h3>
-        <p>Bugs get fixed fast and features ship often — this is a game that's actively cooked, not left to simmer.</p>
+        <p>We fix bugs fast and ship features often — our games are actively cooked, not left to simmer.</p>
       </article>
       <article class="devlog-card">
         <span class="dl-em">💌</span>
@@ -255,27 +324,17 @@
 <section class="section" id="studio" style="padding-top:0;">
   <div class="wrap">
     <div class="who-panel">
-    <div class="who">
-      <div class="who-pill">
-        <span class="puff p1"></span><span class="puff p2"></span>
-        <span class="puff p3"></span><span class="puff p4"></span>
-        Who we are
-      </div>
+      <div class="who-pill">Who we are</div>
       <p class="who-story">
         TrironGames <span class="hl">started as a joke</span> — a not-so-serious
-        “what if we just made a game?” that refused to go away. We kept poking at it,
-        one scrappy prototype at a time, until it stuck. Now making games is simply
-        <span class="hl">part of how we spend our time</span>, and Color Boom is
-        the first thing we're proud enough to share. This is only the beginning.
+        “what if we just made a game?” between friends that refused to go away. We kept
+        poking at it, one scrappy prototype at a time, until it stuck. Now the three of
+        us make games because it's simply <span class="hl">how we like to spend our time</span>,
+        and Color Boom is the first thing we're proud enough to share. This is only the beginning.
       </p>
-      <div class="who-member">
-        <div class="who-av-ring"><img src="assets/claudiu.png" alt="Claudiu Tănasă" loading="lazy" decoding="async" /></div>
-        <b>Claudiu Tănasă</b>
-        <small>Dev / Creator</small>
-      </div>
-      <p class="who-foot">That's the whole crew — <b>for now.</b> 👋</p>
     </div>
-    </div>
+
+    <div class="roster" id="roster"></div>
   </div>
 </section>
 
@@ -287,20 +346,19 @@
           <span class="mark"><img src="assets/trirongames-icon.png" alt="" /></span>
           <span>TrironGames</span>
         </a>
-        <p>Cozy, colorful games — starting with Color Boom.</p>
+        <p>Cozy, colorful games from a tiny three-person studio.</p>
       </div>
       <div>
-        <h4>Game</h4>
-        <ul>
+        <h4>Games</h4>
+        <ul id="footerGames">
           <li><a href="games/color-boom/index.html">Color Boom</a></li>
-          <li><a href="games/color-boom/index.html#features">Features</a></li>
-          <li><a href="https://play.google.com/store/apps/details?id=com.colorboom.yuser" target="_blank" rel="noopener">Download</a></li>
         </ul>
       </div>
       <div>
         <h4>Studio</h4>
         <ul>
           <li><a href="#studio">About us</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
           <li><a href="mailto:trirongames@gmail.com">Contact</a></li>
         </ul>
       </div>
@@ -320,16 +378,145 @@
   </div>
 </footer>
 
+<script src="assets/games.js" defer></script>
+<script src="assets/team.js" defer></script>
 <script>
-  (function () {
-    const row = document.getElementById('devlogRow');
-    const prev = document.getElementById('devlogPrev');
-    const next = document.getElementById('devlogNext');
-    if (!row || !prev || !next) return;
-    const step = () => Math.min(300, row.clientWidth * 0.85);
-    prev.addEventListener('click', () => row.scrollBy({ left: -step(), behavior: 'smooth' }));
-    next.addEventListener('click', () => row.scrollBy({ left: step(), behavior: 'smooth' }));
-  })();
+  window.addEventListener('DOMContentLoaded', function () {
+    var GAMES = window.TRIRON_GAMES || [];
+    var TEAM = window.TRIRON_TEAM || [];
+    var STATUS_LABEL = { live: 'Live now', dev: 'In development', planned: 'Planned' };
+
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
+    }
+    function initials(name) {
+      return String(name || '?').trim().charAt(0).toUpperCase();
+    }
+
+    /* ---- Games grid: live = feature card, dev/planned = codename cards ---- */
+    var grid = document.getElementById('gamesGrid');
+    var codeGrid = document.getElementById('codenameGrid');
+    if (grid && codeGrid) {
+      var liveHTML = '', codeHTML = '';
+      GAMES.forEach(function (g) {
+        var accent = 'style="--game-accent:' + esc(g.accent || '') + '"';
+        if (g.status === 'live') {
+          liveHTML +=
+            '<article class="game-card" ' + accent + '>' +
+              '<div class="shot">' +
+                (g.banner ? '<img src="' + esc(g.banner) + '" alt="' + esc(g.name) + ' screenshot" loading="lazy" decoding="async" />' : '') +
+              '</div>' +
+              '<div class="info">' +
+                '<div class="icon-row">' +
+                  '<div class="mini-mark">' + (g.icon ? '<img src="' + esc(g.icon) + '" alt="" />' : esc(initials(g.name))) + '</div>' +
+                  '<h3>' + esc(g.name) + '</h3>' +
+                '</div>' +
+                '<span class="status-pill is-live">' + esc(STATUS_LABEL.live) + '</span>' +
+                '<p class="blurb">' + esc(g.blurb) + '</p>' +
+                (g.url ? '<a class="learn" href="' + esc(g.url) + '">' + esc(g.cta || 'Learn more') + ' <span class="arrow">→</span></a>' : '') +
+              '</div>' +
+            '</article>';
+        } else {
+          codeHTML +=
+            '<article class="codename-card" ' + accent + '>' +
+              '<div class="cc-art"><span class="cc-mark">' + (g.icon ? '<img src="' + esc(g.icon) + '" alt="" />' : esc(initials(g.name))) + '</span></div>' +
+              '<div class="cc-body">' +
+                '<span class="status-pill">' + esc(STATUS_LABEL[g.status] || g.status) + '</span>' +
+                '<h3>' + esc(g.name) + '</h3>' +
+                (g.genre ? '<p class="cc-genre">' + esc(g.genre) + '</p>' : '') +
+                '<p class="blurb">' + esc(g.blurb) + '</p>' +
+                '<a class="cc-notify" href="#notify">Notify me <span>→</span></a>' +
+              '</div>' +
+            '</article>';
+        }
+      });
+      grid.innerHTML = liveHTML;
+      codeGrid.innerHTML = codeHTML;
+    }
+
+    /* ---- Roadmap: one stage column per status ---- */
+    var rmRow = document.getElementById('roadmapRow');
+    if (rmRow) {
+      var stages = [
+        { key: 'live', label: 'Live', color: '#5AA17A' },
+        { key: 'dev', label: 'In development', color: '#CE7A5C' },
+        { key: 'planned', label: 'Planned', color: '#8E7BC4' }
+      ];
+      rmRow.innerHTML = stages.map(function (st) {
+        var games = GAMES.filter(function (g) { return g.status === st.key; });
+        var body = games.length
+          ? games.map(function (g) {
+              return '<div class="stage-game" style="--game-accent:' + esc(g.accent || st.color) + '">' +
+                       '<span class="sg-dot"></span>' +
+                       '<div><b>' + esc(g.name) + '</b><span>' + esc(g.genre || '') + '</span></div>' +
+                     '</div>';
+            }).join('')
+          : '<div class="stage-empty">Nothing here yet.</div>';
+        return '<div class="stage">' +
+                 '<div class="stage-label" style="color:' + esc(st.color) + '"><span class="dot"></span>' + esc(st.label) + '</div>' +
+                 body +
+               '</div>';
+      }).join('');
+
+      var step = function () { return Math.min(360, rmRow.clientWidth * 0.9); };
+      var rp = document.getElementById('rmPrev'), rn = document.getElementById('rmNext');
+      if (rp) rp.addEventListener('click', function () { rmRow.scrollBy({ left: -step(), behavior: 'smooth' }); });
+      if (rn) rn.addEventListener('click', function () { rmRow.scrollBy({ left: step(), behavior: 'smooth' }); });
+    }
+
+    /* ---- Team roster ---- */
+    var roster = document.getElementById('roster');
+    if (roster) {
+      roster.innerHTML = TEAM.map(function (m) {
+        var avatar = m.photo
+          ? '<div class="av"><img src="' + esc(m.photo) + '" alt="' + esc(m.name) + '" loading="lazy" decoding="async" /></div>'
+          : '<div class="av">' + esc(m.initials || initials(m.name)) + '</div>';
+        return '<div class="member" style="--game-accent:' + esc(m.accent || '') + '">' +
+                 '<div class="av-ring">' + avatar + '</div>' +
+                 '<b>' + esc(m.name) + '</b>' +
+                 '<span class="role">' + esc(m.role) + '</span>' +
+                 '<p class="bio">' + esc(m.bio) + '</p>' +
+                 (m.building ? '<span class="building">Building <span>' + esc(m.building) + '</span></span>' : '') +
+               '</div>';
+      }).join('');
+    }
+
+    /* ---- Footer games list ---- */
+    var footerGames = document.getElementById('footerGames');
+    if (footerGames) {
+      footerGames.innerHTML = GAMES.map(function (g) {
+        return '<li>' + (g.url
+          ? '<a href="' + esc(g.url) + '">' + esc(g.name) + '</a>'
+          : '<span style="color:var(--ink-3);font-weight:700;">' + esc(g.name) + ' <small>(soon)</small></span>') + '</li>';
+      }).join('');
+    }
+
+    /* ---- Dev log arrows ---- */
+    (function () {
+      var row = document.getElementById('devlogRow');
+      var prev = document.getElementById('devlogPrev');
+      var next = document.getElementById('devlogNext');
+      if (!row || !prev || !next) return;
+      var step = function () { return Math.min(300, row.clientWidth * 0.85); };
+      prev.addEventListener('click', function () { row.scrollBy({ left: -step(), behavior: 'smooth' }); });
+      next.addEventListener('click', function () { row.scrollBy({ left: step(), behavior: 'smooth' }); });
+    })();
+
+    /* ---- Notify-me (inert placeholder) ---- */
+    var form = document.getElementById('notifyForm');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = document.getElementById('notifyEmail');
+        if (email && !email.checkValidity()) { email.reportValidity(); return; }
+        form.style.display = 'none';
+        var done = document.getElementById('notifyDone');
+        if (done) done.style.display = 'block';
+      });
+    }
+  });
 </script>
 
 </body>
