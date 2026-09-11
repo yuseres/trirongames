@@ -1,0 +1,172 @@
+/* ============================================================
+   base.css — reset, typography, layout primitives, ambient decor.
+   Loaded after tokens.css on every page.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--nav-h) + 16px);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--bg);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  transition: background .4s ease, color .4s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.06;
+  letter-spacing: -.01em;
+  text-wrap: balance;
+}
+
+p { margin: 0; line-height: 1.62; }
+img { display: block; max-width: 100%; }
+button { font-family: inherit; cursor: pointer; color: inherit; }
+
+a { color: var(--primary); text-decoration: none; transition: color .18s ease; }
+a:hover { color: var(--primary-2); }
+
+::selection { background: color-mix(in srgb, var(--accent) 80%, #000 0%); color: #fff; }
+
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 42%, transparent);
+  border-radius: var(--r-sm);
+}
+
+/* ---------- Layout primitives ---------- */
+.wrap { width: min(1120px, 92vw); margin-inline: auto; }
+.section { padding: clamp(56px, 8vw, 110px) 0; }
+.section-tight { padding: clamp(36px, 5vw, 64px) 0; }
+.stack > * + * { margin-top: 1rem; }
+.center { text-align: center; }
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+.eyebrow.is-centered { justify-content: center; }
+
+.lead {
+  font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+  color: var(--ink-2);
+  font-weight: 700;
+  max-width: 52ch;
+}
+
+.section-title {
+  font-size: clamp(1.9rem, 3.8vw, 2.9rem);
+  margin-top: 14px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 999;
+  background: var(--card);
+  color: var(--ink);
+  padding: 10px 18px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-display);
+  font-weight: 700;
+  transition: top .2s ease;
+}
+.skip-link:focus { top: 12px; }
+
+/* ---------- Ambient decor (soft blobs) ---------- */
+.decor {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.decor i {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: .40;
+}
+:root[data-theme="dark"] .decor i,
+.decor i { will-change: transform; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .decor i { opacity: .24; }
+}
+:root[data-theme="dark"] .decor i { opacity: .24; }
+.decor .b1 { width: 420px; height: 420px; top: -140px; left: -120px; background: var(--clay); }
+.decor .b2 { width: 460px; height: 460px; top: 28%; right: -180px; background: var(--blue); opacity: .28; }
+.decor .b3 { width: 380px; height: 380px; bottom: -160px; left: 24%; background: var(--green); opacity: .24; }
+
+/* ---------- Confetti dots ---------- */
+.confetti { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.confetti span {
+  position: absolute;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  opacity: .8;
+  animation: floaty 7s ease-in-out infinite;
+}
+.confetti span:nth-child(odd) { border-radius: 4px; }
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50%      { transform: translateY(-14px) rotate(12deg); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+.reveal { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      opacity: 0;
+      animation: revealIn linear both;
+      animation-timeline: view();
+      animation-range: entry 2% cover 18%;
+    }
+  }
+}
+@keyframes revealIn {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}

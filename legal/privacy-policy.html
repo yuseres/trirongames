@@ -12,57 +12,26 @@
 <meta property="og:title" content="Privacy Policy — TrironGames">
 <meta property="og:description" content="What data our apps collect, how it is used, and your choices.">
 <meta property="og:url" content="https://yuseres.github.io/trirongames/legal/privacy-policy.html">
-<meta property="og:image" content="https://yuseres.github.io/trirongames/assets/TrironGamesLogo2.png">
+<meta property="og:image" content="https://yuseres.github.io/trirongames/assets/trirongames-banner.png">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="../favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="../assets/TrironGamesLogo2.png">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css">
-<style>
-  * { box-sizing: border-box; }
-  body { font-family: var(--font-body); background: var(--bg); color: var(--ink); line-height: 1.7; margin:0; }
-  .legal-wrap { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; }
-  .legal-page-header { padding: 44px 0 30px; border-bottom: 1px solid var(--line); margin-bottom: 36px; }
-  .app-name { font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
-  .legal-page-header h1 { font-size: 30px; margin-bottom: 8px; }
-  .meta { font-size: 14px; color: var(--ink-2); font-weight: 700; }
-  section { margin-bottom: 32px; }
-  h2 { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
-  h3 { font-family: var(--font-display); font-size: 15.5px; font-weight: 700; color: var(--ink); margin: 16px 0 6px; }
-  p { font-size: 15.5px; color: var(--ink); font-weight: 500; margin-bottom: 12px; }
-  ul, ol { padding-left: 20px; margin-bottom: 12px; }
-  li { font-size: 15.5px; color: var(--ink); font-weight: 500; margin-bottom: 6px; }
-  a { color: var(--primary); text-decoration: none; font-weight: 700; }
-  a:hover { text-decoration: underline; }
-  .contact-box { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; margin-top: 8px; box-shadow: var(--shadow-sm); }
-  .contact-box p { margin: 0; }
-  .notice { background: var(--card-2); border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px; margin-bottom: 24px; }
-  .notice p { margin: 0; font-size: 14.5px; color: var(--ink); }
-  .badge { display: inline-block; background: var(--primary); color: #fff; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 20px; margin-left: 8px; vertical-align: middle; }
-  .toc { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; columns: 2; column-gap: 24px; box-shadow: var(--shadow-sm); }
-  .toc li { font-size: 14px; margin-bottom: 8px; break-inside: avoid; }
-  .toc a { font-weight: 700; }
-  @media (max-width: 480px) { .toc { columns: 1; } }
-</style>
+<link rel="icon" type="image/png" href="../assets/trirongames-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/legal.css">
+<script>
+  try {
+    var t = localStorage.getItem("triron-theme");
+    if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+</script>
 </head>
 <body>
 
-<nav class="site-nav">
-  <div class="wrap">
-    <div class="nav-inner">
-      <a class="site-brand" href="../index.html">
-        <span class="mark"><img src="../assets/trirongames-icon.png" alt="" /></span>
-        <span>TrironGames</span>
-      </a>
-      <div class="site-nav-links">
-        <a href="../index.html#games">Games</a>
-        <a href="../index.html#studio">Studio</a>
-        <a href="../legal/index.html">Legal</a>
-        <a href="mailto:trirongames@gmail.com">Contact</a>
-      </div>
-    </div>
-  </div>
-</nav>
+<div class="decor" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
+<header class="site-nav" id="site-nav"></header>
 <div class="legal-wrap">
   <header class="legal-page-header">
     <div class="app-name">TrironGames</div>
@@ -276,13 +245,17 @@
   </section>
 </div>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-bot">
-      <span>© 2026 TrironGames. All rights reserved.</span>
-      <span><a href="index.html">← All legal documents</a></span>
-    </div>
-  </div>
-</footer>
+<div class="legal-wrap" style="padding-top:0;">
+  <p style="font-weight:700;"><a href="index.html">← All legal documents</a></p>
+</div>
+
+<footer id="site-footer"></footer>
+
+<script src="../data/studio.js"></script>
+<script src="../data/games.js"></script>
+<script>
+  window.PAGE = { base: "../", kind: "legal", current: "legal" };
+</script>
+<script src="../assets/js/site.js" defer></script>
 </body>
 </html>

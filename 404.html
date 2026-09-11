@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page not found — TrironGames</title>
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#B25C43" />
+<link rel="icon" href="/trirongames/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="/trirongames/assets/trirongames-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/trirongames/assets/css/tokens.css" />
+<link rel="stylesheet" href="/trirongames/assets/css/base.css" />
+<link rel="stylesheet" href="/trirongames/assets/css/components.css" />
+<link rel="stylesheet" href="/trirongames/assets/css/pages.css" />
+<script>
+  try {
+    var t = localStorage.getItem("triron-theme");
+    if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<div class="decor" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
+
+<header class="site-nav" id="site-nav"></header>
+
+<main>
+  <section class="notfound wrap">
+    <div class="big">404</div>
+    <h1>This canvas is still blank.</h1>
+    <p>The page you're after moved, or never existed. Let's get you back to something colorful.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="/trirongames/index.html">Back home</a>
+      <a class="btn btn-ghost" href="/trirongames/games.html">See the games</a>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="/trirongames/data/studio.js"></script>
+<script src="/trirongames/data/games.js"></script>
+<script>
+  window.PAGE = { base: "/trirongames/", kind: "studio", current: "" };
+</script>
+<script src="/trirongames/assets/js/site.js" defer></script>
+
+</body>
+</html>

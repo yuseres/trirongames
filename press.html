@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Press kit — TrironGames</title>
+<meta name="description" content="Press and media kit for TrironGames: studio fact sheet, logos, key art, screenshots and contact for coverage of Color Boom and future games." />
+<meta name="theme-color" content="#B25C43" />
+<link rel="canonical" href="https://yuseres.github.io/trirongames/press.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="TrironGames" />
+<meta property="og:title" content="Press kit — TrironGames" />
+<meta property="og:description" content="Studio fact sheet, logos, key art, screenshots and press contact." />
+<meta property="og:url" content="https://yuseres.github.io/trirongames/press.html" />
+<meta property="og:image" content="https://yuseres.github.io/trirongames/assets/trirongames-banner.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="assets/trirongames-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/pages.css" />
+<script>
+  try {
+    var t = localStorage.getItem("triron-theme");
+    if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#factsheet">Skip to fact sheet</a>
+<div class="decor" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
+
+<header class="site-nav" id="site-nav"></header>
+
+<main>
+  <header class="page-hero wrap">
+    <span class="eyebrow is-centered">Press &amp; media kit</span>
+    <h1>Everything you need to write about us.</h1>
+    <p class="lead">Fact sheet, logos, key art and screenshots below. Need a build, a review key or an interview? <a href="#press-contact">Get in touch</a> — I answer press email quickly.</p>
+  </header>
+
+  <section class="section" style="padding-top: clamp(20px, 3vw, 36px);">
+    <div class="wrap panel">
+
+      <div class="press-section" id="factsheet">
+        <h2>Studio fact sheet</h2>
+        <ul class="fact-list">
+          <li><b>Studio</b><span>TrironGames</span></li>
+          <li><b>Founded</b><span id="f-founded">2024</span></li>
+          <li><b>Based in</b><span id="f-location">Remote · EU</span></li>
+          <li><b>Team</b><span>One person — design, code, art and release.</span></li>
+          <li><b>Press contact</b><span id="f-email">trirongames@gmail.com</span></li>
+          <li><b>Website</b><span>yuseres.github.io/trirongames</span></li>
+        </ul>
+        <p style="color:var(--ink-2); font-weight:600; margin-top:6px;" id="f-story"></p>
+      </div>
+
+      <div class="press-section">
+        <h2>Games</h2>
+        <div class="press-games" id="press-games"></div>
+      </div>
+
+      <div class="press-section">
+        <h2>Brand assets</h2>
+        <p style="color:var(--ink-2); font-weight:600;">Right-click → save, or open in a new tab for the full-size file. Please don't recolor or stretch the logo.</p>
+        <div class="asset-grid">
+          <div class="asset-card">
+            <div class="thumb"><img src="assets/trirongames-icon.png" alt="TrironGames icon" /></div>
+            <div class="meta"><span>Studio icon</span><a href="assets/trirongames-icon.png" target="_blank" rel="noopener">PNG</a></div>
+          </div>
+          <div class="asset-card">
+            <div class="thumb"><img src="assets/trirongames-banner.png" alt="TrironGames banner" /></div>
+            <div class="meta"><span>Studio banner</span><a href="assets/trirongames-banner.png" target="_blank" rel="noopener">PNG</a></div>
+          </div>
+          <div class="asset-card">
+            <div class="thumb"><img src="games/color-boom/assets/logo.png" alt="Color Boom logo" /></div>
+            <div class="meta"><span>Color Boom logo</span><a href="games/color-boom/assets/logo.png" target="_blank" rel="noopener">PNG</a></div>
+          </div>
+          <div class="asset-card">
+            <div class="thumb"><img src="games/color-boom/assets/promo-art.png" alt="Color Boom key art" /></div>
+            <div class="meta"><span>Color Boom key art</span><a href="games/color-boom/assets/promo-art.png" target="_blank" rel="noopener">PNG</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="press-section">
+        <h2>Color Boom screenshots</h2>
+        <div class="asset-grid" id="cb-screens"></div>
+      </div>
+
+      <div class="press-section" id="press-contact">
+        <h2>Press contact</h2>
+        <p style="color:var(--ink-2); font-weight:700;">Email <a id="p-mail" href="mailto:trirongames@gmail.com">trirongames@gmail.com</a> with subject line <b>"Press"</b>. Happy to provide keys, extra assets, or answer questions.</p>
+        <div class="social-row" id="press-social" style="margin-top:14px;"></div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="data/studio.js"></script>
+<script src="data/games.js"></script>
+<script>
+  window.PAGE = { base: "", kind: "studio", current: "press" };
+</script>
+<script src="assets/js/site.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var S = window.TRIRON_STUDIO || {}, G = window.TRIRON_GAMES || [], I = window.TRIRON_ICON || {};
+    function set(id, v) { var e = document.getElementById(id); if (e && v != null) e.textContent = v; }
+    set("f-founded", S.founded);
+    set("f-location", S.location);
+    set("f-email", S.pressEmail || S.email);
+    set("f-story", S.story);
+    var mail = S.pressEmail || S.email;
+    if (mail) { var pm = document.getElementById("p-mail"); pm.href = "mailto:" + mail + "?subject=Press"; pm.textContent = mail; }
+
+    var pg = document.getElementById("press-games");
+    if (pg) pg.innerHTML = G.map(function (g) {
+      var label = { live: "Live on Google Play", beta: "In beta", dev: "In development", planned: "Planned", paused: "On hold" }[g.status] || g.status;
+      var href = g.page || ((g.links || [])[0] || {}).url || "#";
+      return '<a class="press-game" href="' + href + '"' + (g.page ? "" : ' target="_blank" rel="noopener"') + ' style="--accent:' + (g.accent || "var(--primary)") + '">' +
+        (g.icon ? '<img src="' + g.icon + '" alt="" />' : "") +
+        "<span><b>" + g.name + "</b><span>" + (g.genre || "") + " · " + label + "</span></span>" +
+        '<span class="go">→</span></a>';
+    }).join("");
+
+    var screens = ["library", "daily-rewards", "ranks", "missions", "profile", "game-shop"];
+    var cb = document.getElementById("cb-screens");
+    if (cb) cb.innerHTML = screens.map(function (s) {
+      var src = "games/color-boom/assets/screens/" + s + ".png";
+      return '<div class="asset-card"><div class="thumb"><img src="' + src + '" alt="Color Boom ' + s + ' screen" loading="lazy" /></div>' +
+        '<div class="meta"><span>' + s.replace(/-/g, " ") + '</span><a href="' + src + '" target="_blank" rel="noopener">PNG</a></div></div>';
+    }).join("");
+
+    var soc = S.socials || {}, row = document.getElementById("press-social"), html = "";
+    if (soc.instagram) html += '<a href="' + soc.instagram + '" target="_blank" rel="noopener" aria-label="Instagram">' + (I.instagram || "IG") + "</a>";
+    if (soc.tiktok) html += '<a href="' + soc.tiktok + '" target="_blank" rel="noopener" aria-label="TikTok">' + (I.tiktok || "TT") + "</a>";
+    if (soc.facebook) html += '<a href="' + soc.facebook + '" target="_blank" rel="noopener" aria-label="Facebook">' + (I.facebook || "FB") + "</a>";
+    if (row) row.innerHTML = html;
+  });
+</script>
+
+</body>
+</html>

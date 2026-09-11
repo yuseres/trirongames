@@ -1,0 +1,167 @@
+/* ============================================================
+   legal.css — shared styles for the legal documents. Replaces
+   the near-identical <style> block that used to sit inline in
+   each of privacy-policy / terms / delete-account / index.
+   Everything is scoped to .legal-wrap so it can't leak.
+   ============================================================ */
+
+.legal-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 20px 72px;
+  line-height: 1.7;
+}
+
+.legal-page-header {
+  padding: clamp(36px, 6vw, 56px) 0 28px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 34px;
+}
+.legal-page-header .app-name,
+.legal-wrap .app-name {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+.legal-page-header h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); margin-bottom: 10px; }
+.legal-wrap .meta { font-size: 14px; color: var(--ink-2); font-weight: 700; }
+
+.legal-wrap section { margin-bottom: 30px; }
+.legal-wrap h2 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 30px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.legal-wrap h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 18px 0 6px;
+}
+.legal-wrap p,
+.legal-wrap li {
+  font-size: 15.5px;
+  color: var(--ink);
+  font-weight: 500;
+}
+.legal-wrap p { margin-bottom: 12px; }
+.legal-wrap ul,
+.legal-wrap ol { padding-left: 22px; margin-bottom: 12px; }
+.legal-wrap li { margin-bottom: 6px; }
+.legal-wrap strong { font-weight: 800; }
+
+.legal-wrap a { color: var(--primary); font-weight: 700; }
+.legal-wrap a:hover { color: var(--primary-2); text-decoration: underline; }
+
+.legal-wrap code {
+  background: var(--card-2);
+  padding: 1px 6px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+}
+
+.legal-wrap .toc {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px 24px;
+  columns: 2;
+  column-gap: 24px;
+  box-shadow: var(--shadow-sm);
+}
+.legal-wrap .toc li { font-size: 14px; margin-bottom: 8px; break-inside: avoid; }
+.legal-wrap .toc a { font-weight: 700; }
+@media (max-width: 480px) { .legal-wrap .toc { columns: 1; } }
+
+.legal-wrap .contact-box {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-top: 8px;
+  box-shadow: var(--shadow-sm);
+}
+.legal-wrap .contact-box p { margin: 0; }
+
+.legal-wrap .notice {
+  background: var(--card-2);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+.legal-wrap .notice p { margin: 0 0 8px; font-size: 14.5px; }
+.legal-wrap .notice p:last-child { margin-bottom: 0; }
+
+.legal-wrap .badge {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 20px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.legal-wrap .tag {
+  display: inline-block;
+  background: var(--card-2);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 20px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.legal-wrap .option-box {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin: 16px 0 24px;
+  box-shadow: var(--shadow-sm);
+}
+.legal-wrap .option-box h3 { margin-top: 0; }
+
+/* ---------- Legal index list ---------- */
+.legal-hero { padding: clamp(48px, 7vw, 78px) 0 8px; }
+.legal-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); }
+.legal-list { display: grid; gap: 14px; margin-top: 28px; }
+.legal-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 20px 26px;
+  box-shadow: var(--shadow-sm);
+  color: var(--ink);
+  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+}
+.legal-list a:hover {
+  transform: translateY(-2px);
+  color: var(--ink);
+  background: color-mix(in srgb, var(--accent) 10%, var(--card));
+  border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
+}
+.legal-list a:active { transform: translateY(0) scale(.99); }
+.legal-list .arrow { color: var(--accent); }

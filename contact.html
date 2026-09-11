@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — TrironGames</title>
+<meta name="description" content="Get in touch with TrironGames — support, feedback, press and business enquiries. One person reads every email." />
+<meta name="theme-color" content="#B25C43" />
+<link rel="canonical" href="https://yuseres.github.io/trirongames/contact.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="TrironGames" />
+<meta property="og:title" content="Contact — TrironGames" />
+<meta property="og:description" content="Support, feedback, press and business enquiries." />
+<meta property="og:url" content="https://yuseres.github.io/trirongames/contact.html" />
+<meta property="og:image" content="https://yuseres.github.io/trirongames/assets/trirongames-banner.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="assets/trirongames-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/pages.css" />
+<script>
+  try {
+    var t = localStorage.getItem("triron-theme");
+    if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#contact">Skip to contact</a>
+<div class="decor" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
+
+<header class="site-nav" id="site-nav"></header>
+
+<main>
+  <header class="page-hero wrap">
+    <span class="eyebrow is-centered">Contact</span>
+    <h1>Say hi.</h1>
+    <p class="lead">TrironGames is one person. Every message — a bug, an idea, a hello, a press request — lands in the same inbox, and I read all of them.</p>
+  </header>
+
+  <section class="section" id="contact" style="padding-top: clamp(20px, 3vw, 36px);">
+    <div class="wrap">
+      <div class="panel contact-grid">
+        <div class="contact-card">
+          <h2>Email</h2>
+          <p>The fastest way to reach me. I usually reply within a couple of days.</p>
+          <a class="contact-big-mail" id="mail-link" href="mailto:trirongames@gmail.com">✉️ trirongames@gmail.com</a>
+
+          <ul class="contact-list">
+            <li><span class="ci">🐞</span><span><b>Bugs &amp; support</b>Tell me the game, your device, and what happened. Screenshots help a lot.</span></li>
+            <li><span class="ci">💡</span><span><b>Feedback &amp; ideas</b>Loved something? Missing something? I want to hear it.</span></li>
+            <li><span class="ci">📰</span><span><b>Press &amp; creators</b>Ask for a press kit or a build — see the <a href="press.html">press page</a>.</span></li>
+            <li><span class="ci">🤝</span><span><b>Business</b>Partnerships, licensing, publishing — same address, subject line "Business".</span></li>
+          </ul>
+        </div>
+
+        <aside class="contact-aside">
+          <div class="mini">
+            <h3>Account deletion</h3>
+            <p>Want your account and data removed? That has its own page: <a href="legal/delete-account.html">Delete account</a>.</p>
+          </div>
+          <div class="mini">
+            <h3>Privacy</h3>
+            <p>How the games handle your data is covered in the <a href="legal/privacy-policy.html">Privacy Policy</a>.</p>
+          </div>
+          <div class="mini">
+            <h3>Follow along</h3>
+            <p>Devlogs, art and launch news:</p>
+            <div class="social-row" id="social-row"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="data/studio.js"></script>
+<script src="data/games.js"></script>
+<script>
+  window.PAGE = { base: "", kind: "studio", current: "contact" };
+</script>
+<script src="assets/js/site.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var S = window.TRIRON_STUDIO || {}, I = window.TRIRON_ICON || {};
+    if (S.email) {
+      var m = document.getElementById("mail-link");
+      m.href = "mailto:" + S.email;
+      m.textContent = "✉️ " + S.email;
+    }
+    var soc = S.socials || {}, row = document.getElementById("social-row"), html = "";
+    if (soc.instagram) html += '<a href="' + soc.instagram + '" target="_blank" rel="noopener" aria-label="Instagram">' + (I.instagram || "IG") + "</a>";
+    if (soc.tiktok) html += '<a href="' + soc.tiktok + '" target="_blank" rel="noopener" aria-label="TikTok">' + (I.tiktok || "TT") + "</a>";
+    if (soc.facebook) html += '<a href="' + soc.facebook + '" target="_blank" rel="noopener" aria-label="Facebook">' + (I.facebook || "FB") + "</a>";
+    if (row) row.innerHTML = html;
+  });
+</script>
+
+</body>
+</html>

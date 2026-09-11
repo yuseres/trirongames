@@ -1,0 +1,13 @@
+{
+  "name": "TrironGames",
+  "short_name": "TrironGames",
+  "description": "A tiny one-person indie studio making cozy, colorful games.",
+  "start_url": "/trirongames/",
+  "scope": "/trirongames/",
+  "display": "standalone",
+  "background_color": "#F6EFE7",
+  "theme_color": "#B25C43",
+  "icons": [
+    { "src": "/trirongames/assets/trirongames-icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

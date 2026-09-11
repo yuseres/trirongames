@@ -1,1 +1,10 @@
 node_modules/
+
+# Separate repo, checked out here only to publish the root-domain
+# app-ads.txt for AdMob — never part of this site.
+yuseres.github.io/
+
+# Design-tool scratch state, never shipped.
+.image-slots.state.json
+.DS_Store
+Thumbs.db

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Games — TrironGames</title>
+<meta name="description" content="Every game from TrironGames: Color Boom (live on Google Play) and Animals Merge (in development), plus whatever comes next." />
+<meta name="theme-color" content="#B25C43" />
+<link rel="canonical" href="https://yuseres.github.io/trirongames/games.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="TrironGames" />
+<meta property="og:title" content="Games — TrironGames" />
+<meta property="og:description" content="Every game from TrironGames — live, in development and planned." />
+<meta property="og:url" content="https://yuseres.github.io/trirongames/games.html" />
+<meta property="og:image" content="https://yuseres.github.io/trirongames/assets/trirongames-banner.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="assets/trirongames-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/home.css" />
+<script>
+  try {
+    var t = localStorage.getItem("triron-theme");
+    if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+</script>
+</head>
+<body class="games-index">
+
+<a class="skip-link" href="#games-grid">Skip to games</a>
+<div class="decor" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
+
+<header class="site-nav" id="site-nav"></header>
+
+<main>
+  <header class="games-index-hero wrap">
+    <span class="eyebrow">Our games</span>
+    <h1 class="section-title">Everything we've made — and what's next.</h1>
+    <p class="lead">One live, one in the oven, and room for more. Each game leads with its own color; the studio just holds the door.</p>
+  </header>
+
+  <section class="section" style="padding-top: clamp(28px, 4vw, 44px);">
+    <div class="wrap">
+      <div class="games-grid" id="games-grid" aria-live="polite"></div>
+      <div class="codename-grid" id="codename-grid"></div>
+      <noscript>
+        <ul style="margin-top:24px; line-height:2; font-weight:700;">
+          <li><a href="games/color-boom/index.html">Color Boom</a> — live now.</li>
+          <li><a href="games/animals-merge/index.html">Animals Merge</a> — in development.</li>
+        </ul>
+      </noscript>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="data/studio.js"></script>
+<script src="data/games.js"></script>
+<script>
+  window.PAGE = { base: "", kind: "studio", current: "games" };
+</script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/home.js" defer></script>
+
+</body>
+</html>

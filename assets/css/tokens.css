@@ -1,0 +1,116 @@
+/* ============================================================
+   tokens.css — one design-token layer for the whole TrironGames
+   site (studio home, games index, game landing pages, legal,
+   contact, press). Cozy cream shell + chromatic game accents.
+
+   Dark mode: follows the device by default, and a manual choice
+   on <html data-theme="dark"|"light"> (set by the nav toggle in
+   site.js) wins in either direction.
+   ============================================================ */
+
+:root {
+  /* --- Cozy cream surfaces --- */
+  --bg:        #F6EFE7;
+  --bg-2:      #EFE4D8;
+  --card:      #FFFFFF;
+  --card-2:    #F5ECE2;
+
+  /* --- Warm ink --- */
+  --ink:       #3A2F28;
+  --ink-2:     #857567;
+  --ink-3:     #B4A597;
+
+  --line:      rgba(58, 44, 40, .10);
+  --line-2:    rgba(58, 44, 40, .16);
+
+  /* --- Studio accent (muted clay) — studio chrome only --- */
+  --primary:     #B25C43;
+  --primary-2:   #CE7A5C;
+  --primary-ink: #FFFFFF;
+
+  /* --- Chromatic palette — games paint themselves with these --- */
+  --clay:   #C56B4A;
+  --gold:   #E0A32E;
+  --green:  #5AA17A;
+  --blue:   #4C93C4;
+  --purple: #8E7BC4;
+  --pink:   #D97297;
+
+  /* Per-surface game accent: defaults to studio clay, overridden
+     locally with style="--accent:#…; --accent2:#…" on a game card,
+     a game section, or <html> on a game landing page. */
+  --accent:  var(--primary);
+  --accent2: var(--primary-2);
+  --accent-ink: #FFFFFF;
+
+  /* --- Shadows (warm, soft) --- */
+  --shadow-sm:  0 4px 16px rgba(120, 90, 70, .10);
+  --shadow-md:  0 20px 44px -16px rgba(120, 90, 70, .24);
+  --shadow-lg:  0 48px 90px -28px rgba(105, 78, 60, .34);
+  --shadow-pop: 0 16px 32px -10px color-mix(in srgb, var(--accent) 40%, transparent);
+
+  /* --- Radii --- */
+  --r-sm: 14px;
+  --r-md: 22px;
+  --r-lg: 32px;
+  --r-xl: 44px;
+
+  /* --- Type --- */
+  --font-display: "Baloo 2", ui-rounded, "Segoe UI", system-ui, sans-serif;
+  --font-body:    "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --nav-h: 76px;
+  color-scheme: light;
+}
+
+/* ---------- Dark: cozy deep plum (auto) ---------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:      #1B1622;
+    --bg-2:    #221C2C;
+    --card:    #2A2233;
+    --card-2:  #322838;
+    --ink:     #F4ECF5;
+    --ink-2:   #B9A7BE;
+    --ink-3:   #877A8E;
+    --line:    rgba(255, 255, 255, .10);
+    --line-2:  rgba(255, 255, 255, .17);
+    --primary:   #E08763;
+    --primary-2: #EFA07C;
+    --clay:   #E08763;
+    --gold:   #EDB65A;
+    --green:  #6FC095;
+    --blue:   #6FB2DE;
+    --purple: #AE9BE0;
+    --pink:   #EC90B2;
+    --shadow-sm:  0 4px 18px rgba(0, 0, 0, .40);
+    --shadow-md:  0 22px 50px -16px rgba(0, 0, 0, .58);
+    --shadow-lg:  0 50px 100px -30px rgba(0, 0, 0, .68);
+    color-scheme: dark;
+  }
+}
+
+/* ---------- Dark: manual choice wins ---------- */
+:root[data-theme="dark"] {
+  --bg:      #1B1622;
+  --bg-2:    #221C2C;
+  --card:    #2A2233;
+  --card-2:  #322838;
+  --ink:     #F4ECF5;
+  --ink-2:   #B9A7BE;
+  --ink-3:   #877A8E;
+  --line:    rgba(255, 255, 255, .10);
+  --line-2:  rgba(255, 255, 255, .17);
+  --primary:   #E08763;
+  --primary-2: #EFA07C;
+  --clay:   #E08763;
+  --gold:   #EDB65A;
+  --green:  #6FC095;
+  --blue:   #6FB2DE;
+  --purple: #AE9BE0;
+  --pink:   #EC90B2;
+  --shadow-sm:  0 4px 18px rgba(0, 0, 0, .40);
+  --shadow-md:  0 22px 50px -16px rgba(0, 0, 0, .58);
+  --shadow-lg:  0 50px 100px -30px rgba(0, 0, 0, .68);
+  color-scheme: dark;
+}
