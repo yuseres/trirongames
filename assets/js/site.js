@@ -65,7 +65,6 @@
       ["Games", BASE + "games.html", "games"],
       ["Roadmap", BASE + "index.html#roadmap", "roadmap"],
       ["Studio", BASE + "index.html#studio", "studio"],
-      ["Press", BASE + "press.html", "press"],
       ["Legal", BASE + "legal/index.html", "legal"],
       ["Contact", BASE + "contact.html", "contact"]
     ];
@@ -171,7 +170,6 @@
           '<div><h4>Studio</h4><ul>' +
             '<li><a href="' + BASE + 'index.html#studio">About</a></li>' +
             '<li><a href="' + BASE + 'index.html#roadmap">Roadmap</a></li>' +
-            '<li><a href="' + BASE + 'press.html">Press kit</a></li>' +
             '<li><a href="' + BASE + 'contact.html">Contact</a></li>' +
           "</ul></div>" +
           '<div><h4>Legal</h4><ul>' +

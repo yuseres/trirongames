@@ -1,7 +1,7 @@
 # TrironGames site
 
 The studio site for **TrironGames** — home page, a landing page per game, plus
-legal, contact and press pages. Live at
+legal and contact pages. Live at
 <https://yuseres.github.io/trirongames/>.
 
 **No build step.** Plain HTML, CSS and JS. Edit a file, refresh the browser.
@@ -67,7 +67,7 @@ assets/css/
   home.css          home page + games index
   game.css          the shared game-landing template
   legal.css         the legal documents
-  pages.css         contact / press / 404
+  pages.css         contact / 404
 assets/js/
   site.js           builds the nav + footer on every page, runs the dark-mode toggle
   home.js           renders the games grid + roadmap board
