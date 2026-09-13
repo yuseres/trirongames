@@ -31,7 +31,7 @@ window.TRIRON_STUDIO = {
   },
 
   socials: {
-    instagram: "https://www.instagram.com/colorboomers",
+    instagram: "https://www.instagram.com/trirongames",
     tiktok: "https://www.tiktok.com/@trirongames",
     facebook: "https://www.facebook.com/profile.php?id=61589805556275"
   }
