@@ -1,14 +1,25 @@
 /* ============================================================
    games/animals-merge/game.config.js
-   Animals Merge is still in development, so this page shows the
-   "coming soon" layout. When it's ready, fill in heroTitle /
-   heroShots / features (see games/color-boom/game.config.js for
-   a full example) and flip `status` to "beta" or "live" in
-   /data/games.js.
+   Animals Merge is live! This is a lean launch page built around
+   the key art we have (assets/banner.png) — no phone-screenshot
+   cluster or feature rows yet. Once you have real in-game screens,
+   add heroShots / features here (see games/color-boom/game.config.js
+   for a full example with all fields explained).
    ============================================================ */
 window.GAME_CONFIG = {
   slug: "animals-merge",
+
+  metaTitle: "Animals Merge — Merge cute critters into bigger, rarer ones",
+
+  /* ---- Hero ---- */
+  eyebrow: "Cozy merge puzzler",
+  heroTitle: "Merge them up, *grow* your menagerie.",
   heroBody:
-    "A cozy merge puzzler about growing a little menagerie — merge cute critters into " +
-    "bigger, rarer ones. Still cooking; a first look is on the way."
+    "Merge cute critters into bigger, rarer ones and fill out your own cozy " +
+    "little menagerie, one merge at a time.",
+  heroArt: "assets/banner.png",
+
+  /* ---- Closing CTA ---- */
+  ctaTitle: "Ready to start merging?",
+  ctaBody: "Animals Merge is free on Google Play. Your first critter is one tap away."
 };

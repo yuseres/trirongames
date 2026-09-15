@@ -70,17 +70,23 @@ window.TRIRON_GAMES = [
   {
     slug: "animals-merge",
     name: "Animals Merge",
-    status: "dev",
+    status: "live",
     tagline: "Merge cute critters into bigger, rarer ones.",
     blurb:
-      "A cozy merge puzzler about growing a little menagerie. Still cooking — " +
-      "a first look is on the way.",
+      "The cozy merge puzzler where you grow your own little menagerie — merge " +
+      "critters into bigger, rarer ones and fill out your collection.",
     genre: "Cozy merge puzzler",
     accent: "#5AA17A",
     accent2: "#74B892",
     icon: "games/animals-merge/assets/icon.png",
     banner: "games/animals-merge/assets/banner.png",
     page: "games/animals-merge/",
-    links: []
+    links: [
+      {
+        label: "Google Play",
+        url: "https://play.google.com/store/apps/details?id=com.trirongames.animalsmerge"
+      }
+    ],
+    released: "2026-09"
   }
 ];
