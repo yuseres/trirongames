@@ -165,3 +165,52 @@
 }
 .legal-list a:active { transform: translateY(0) scale(.99); }
 .legal-list .arrow { color: var(--accent); }
+
+/* ---------- Quick summary + data table ---------- */
+.legal-wrap .summary {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 24px 8px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-sm);
+}
+.legal-wrap .summary h2 { margin-top: 0; border-bottom: 0; padding-bottom: 0; }
+.legal-wrap .summary ul { list-style: none; padding-left: 0; }
+.legal-wrap .summary li { padding-left: 26px; position: relative; }
+.legal-wrap .summary li::before {
+  content: "✓";
+  position: absolute;
+  left: 2px;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.legal-wrap .table-wrap {
+  overflow-x: auto;
+  margin: 12px 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+}
+.legal-wrap table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 520px; }
+.legal-wrap th,
+.legal-wrap td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.legal-wrap th { font-family: var(--font-display); font-weight: 800; background: var(--card-2); }
+.legal-wrap tr:last-child td { border-bottom: 0; }
+
+/* ---------- Sibling-document links + print ---------- */
+.legal-wrap .doc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 14.5px;
+}
+
+@media print {
+  .site-nav, #site-footer, .decor, .doc-links { display: none !important; }
+  .legal-wrap { max-width: none; padding: 0; }
+  .legal-wrap a { color: inherit; text-decoration: underline; }
+}
